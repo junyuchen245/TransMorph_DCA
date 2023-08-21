@@ -1,15 +1,12 @@
 '''
-TransMorph model
-Chen, J., Du, Y., He, Y., Segars, W. P., Li, Y., & Frey, E. C. (2021).
+TransMorph-DCA model
+Chen, J., Liu, Y., He, Y., & Du, Y. (2023).
+Deformable Cross-Attention Transformer for Medical Image Registration.
 TransMorph: Transformer for unsupervised medical image registration.
-arXiv preprint arXiv:2111.10480.
-Swin-Transformer code retrieved from:
-https://github.com/SwinTransformer/Swin-Transformer-Semantic-Segmentation
-Original paper:
-Liu, Z., Lin, Y., Cao, Y., Hu, H., Wei, Y., Zhang, Z., ... & Guo, B. (2021).
-Swin transformer: Hierarchical vision transformer using shifted windows.
-arXiv preprint arXiv:2103.14030.
-Modified and tested by:
+In Machine Learning in Medical Imaging: 14th International Workshop, MLMI 2023,
+Held in Conjunction with MICCAI 2023.
+
+Created by:
 Junyu Chen
 jchen245@jhmi.edu
 Johns Hopkins University
