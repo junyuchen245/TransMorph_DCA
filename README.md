@@ -8,7 +8,7 @@ This is a **PyTorch** implementation of my paper:\
 
 Pretrained weights on OASIS dataset from Learn2Reg challenge: [TransMorph](https://drive.google.com/uc?export=download&id=1QfMiTzZMIlBDg8nI9NIWf0FyRHc2ZNXo)
 
-## Deformable cross-attentio illustration:
+## Deformable cross-attention illustration:
 <img src="https://github.com/junyuchen245/TransMorph_DCA/blob/main/figs/cross_attn.jpg" width="600"/>
 
 ## TransMorph-DCA Architecture:
