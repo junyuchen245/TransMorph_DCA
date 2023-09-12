@@ -6,8 +6,9 @@ This is a **PyTorch** implementation of my paper:\
 **Accepted to MLMI 2023!**\
 <a href="https://arxiv.org/abs/2303.06179">Chen, Junyu, et al. "Deformable Cross-Attention Transformer for Medical Image Registration." In Machine Learning in Medical Imaging: 14th International Workshop, MLMI 2023.</a>
 
-Pretrained weights on the OASIS dataset from Learn2Reg challenge: [TransMorph-DCA](https://drive.google.com/uc?export=download&id=1QfMiTzZMIlBDg8nI9NIWf0FyRHc2ZNXo)\
-Pretrained weights on the [IXI dataset](https://github.com/junyuchen245/Preprocessed_IXI_Dataset): [TransMorph-DCA](https://drive.google.com/uc?export=download&id=1_3qh9pqHwikUUtbDy-ANvcnr532u8K-1)
+**We provide pretrained weights, as well as training and inference scripts on two datasets, IXI and OASIS.**\
+*Pretrained weights on the OASIS dataset from Learn2Reg challenge*: [Download here!](https://drive.google.com/uc?export=download&id=1QfMiTzZMIlBDg8nI9NIWf0FyRHc2ZNXo) *Scripts*: [Code](https://github.com/junyuchen245/TransMorph_DCA/tree/main/OASIS)\
+Pretrained weights on the [IXI](https://github.com/junyuchen245/Preprocessed_IXI_Dataset) dataset: [Download here!](https://drive.google.com/uc?export=download&id=1_3qh9pqHwikUUtbDy-ANvcnr532u8K-1) *Scripts*: [Code](https://github.com/junyuchen245/TransMorph_DCA/tree/main/IXI)
 ## Deformable cross-attention illustration:
 <img src="https://github.com/junyuchen245/TransMorph_DCA/blob/main/figs/cross_attn.jpg" width="600"/>
 
