@@ -1289,7 +1289,7 @@ class TransMorphCascadeAd1(nn.Module):
         x = self.up1(x, f2)
         xx = self.up2(x, f3)
         def_x = x_s0[:, 0:1,...]
-        flow_previous = 0
+        flow_previous = torch.zeros((source_d.shape[0], 3, source_d.shape[2], source_d.shape[3], source_d.shape[4])).to(source_d.device)
         flows = []
         # flow integration
         for t in range(self.time_steps):
@@ -1297,7 +1297,7 @@ class TransMorphCascadeAd1(nn.Module):
             x = self.up3s[t](xx, f_out)
             flow = self.reg_heads[t](x)
             flows.append(flow)
-            flow_new = flow_previous + self.spatial_trans(flow, flow)
+            flow_new = flow_previous + self.spatial_trans(flow, flow_previous)
             def_x = self.spatial_trans(source_d, flow_new)
             flow_previous = flow_new
         flow = flow_new
@@ -1376,7 +1376,7 @@ class TransMorphCascadeAd(nn.Module):
         x = self.up1(x, f2)
         xx = self.up2(x, f3)
         def_x = mov.clone()
-        flow_previous = 0
+        flow_previous = torch.zeros((mov.shape[0], 3, mov.shape[2], mov.shape[3], mov.shape[4])).to(mov.device)
         flows = []
         # flow integration
         for t in range(self.time_steps):
@@ -1384,7 +1384,7 @@ class TransMorphCascadeAd(nn.Module):
             x = self.up3s[t](xx, f_out)
             flow = self.reg_heads[t](x)
             flows.append(flow)
-            flow_new = flow_previous + self.spatial_trans(flow, flow)
+            flow_new = flow_previous + self.spatial_trans(flow, flow_previous)
             def_x = self.spatial_trans(mov, flow_new)
             flow_previous = flow_new
         flow = flow_new
@@ -1456,7 +1456,7 @@ class TransMorphCascadeAdFullRes(nn.Module):
         x = self.up0(f0, f1)
         xx = self.up1(x, f2)
         def_x = x_s1[:, 0:1,...]
-        flow_previous = 0
+        flow_previous = torch.zeros((source_d.shape[0], 3, source_d.shape[2], source_d.shape[3], source_d.shape[4])).to(source_d.device)
         flows = []
         # flow integration
         for t in range(self.time_steps):
@@ -1464,7 +1464,7 @@ class TransMorphCascadeAdFullRes(nn.Module):
             x = self.up2s[t](xx, f_out)
             flow = self.reg_heads[t](x)
             flows.append(flow)
-            flow_new = flow_previous + self.spatial_trans_down(flow, flow)
+            flow_new = flow_previous + self.spatial_trans_down(flow, flow_previous)
             def_x = self.spatial_trans_down(source_d, flow_new)
             flow_previous = flow_new
         flow = flow_new
